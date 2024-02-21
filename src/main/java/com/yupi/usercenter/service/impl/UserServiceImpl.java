@@ -37,7 +37,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     /**
      * 盐值，混淆密码
      */
-    private static final String SALT = "yupi";
+    private static final String SALT = "sz";
 
     /**
      * 用户注册
@@ -118,7 +118,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             return null;
         }
         if (userAccount.length() < 4) {
-            return null;
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号长度小于4位");
+            //return null;
         }
         if (userPassword.length() < 8) {
             return null;
