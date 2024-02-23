@@ -73,6 +73,11 @@ public class UserController {
             return ResultUtils.error(ErrorCode.PARAMS_ERROR);
         }
         User user = userService.userLogin(userAccount, userPassword, request);
+        if(user==null){
+            // 如果登录失败，则返回message 失败信息
+            return ResultUtils.error(ErrorCode.LOGIN_ERROR);
+        }
+
         return ResultUtils.success(user);
     }
 
@@ -139,7 +144,7 @@ public class UserController {
     }
 
     /**
-     * 是否为管理员
+     * 是否为管理员  通过状态进行判断
      *
      * @param request
      * @return

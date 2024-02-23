@@ -32,22 +32,25 @@ public class BaseResponse<T> implements Serializable {
      */
     private String description;
 
-    public BaseResponse(int code, T data, String message, String description) {
+    private boolean success;
+
+    public BaseResponse(int code, T data, String message, String description,boolean success) {
         this.code = code;
         this.data = data;
         this.message = message;
         this.description = description;
+        this.success = success;
     }
 
-    public BaseResponse(int code, T data, String message) {
-        this(code, data, message, "");
+    public BaseResponse(int code, T data, String message,boolean success) {
+        this(code, data, message, "",success);
     }
 
-    public BaseResponse(int code, T data) {
-        this(code, data, "", "");
+    public BaseResponse(int code, T data,boolean success) {
+        this(code, data, "", "",success);
     }
 
     public BaseResponse(ErrorCode errorCode) {
-        this(errorCode.getCode(), null, errorCode.getMessage(), errorCode.getDescription());
+        this(errorCode.getCode(), null, errorCode.getMessage(), errorCode.getDescription(),errorCode.getSuccess());
     }
 }
