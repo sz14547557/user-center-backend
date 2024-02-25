@@ -3,9 +3,12 @@ spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: 'jdbc:mysql://sh-cynosdbmysql-grp-98pxrcoq.sql.tencentcdb.com:29164/user_center?useSSL=false'
-    username: self
-    password: liyupi66!
+#    此处用docker 的话如果是docker内部的mysql则可以使用localhost ，
+#    url: jdbc:mysql://localhost:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+#    此处用docker 如果是宿主机的mysql 则需要指定ip地址
+    url: jdbc:mysql://172.17.0.2:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: Sz10231314@
   # session 失效时间
   session:
     timeout: 86400

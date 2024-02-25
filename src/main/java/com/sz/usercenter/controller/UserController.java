@@ -27,6 +27,8 @@ import static com.sz.usercenter.contant.UserConstant.USER_LOGIN_STATE;
  */
 @RestController
 @RequestMapping("/user")
+//todo sz开启后端跨域注解，允许跨域操作
+@CrossOrigin
 public class UserController {
 
     @Resource

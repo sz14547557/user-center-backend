@@ -28,7 +28,7 @@ public class UserServiceTest {
     public void testAddUser() {
         User user = new User();
         user.setUsername("sz");
-        user.setUserAccount("14547557");
+        user.setUserAccount("145475572");
         user.setAvatarUrl("https://636f-codenav-8grj8px727565176-1256524210.tcb.qcloud.la/img/logo.png");
         user.setGender(0);
         String encryptPassword = DigestUtils.md5DigestAsHex((SALT + "haha1314").getBytes());
