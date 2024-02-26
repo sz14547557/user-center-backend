@@ -1,0 +1,14 @@
+# windows docker线上配置文件
+spring:
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+#    此处用docker 的话如果是docker内部的mysql则可以使用 Linux的ip地址进行连接
+    url: jdbc:mysql://:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
+  # session 失效时间
+  session:
+    timeout: 86400
+server:
+  address: 0.0.0.0

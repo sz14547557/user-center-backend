@@ -1,11 +1,11 @@
-# 线上配置文件 用docker配置进行取代
+# mac docker线上配置文件
 spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-#    此处用docker 的话如果是docker内部的mysql则可以使用 mysql的容器服务名/Linux的ip地址(使用命令查询容器ip地址： docker inspect 容器id )
+#    此处用docker 的话mysql则可以使用 本机ip地址进行连接
     url: jdbc:mysql://192.168.6.190:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
-    username: root2
+    username: root
     password: Sz10231314@
   # session 失效时间
   session:

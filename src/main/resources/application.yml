@@ -1,16 +1,18 @@
 # 公共配置文件
-# @author <a href="https://github.com/liyupi">程序员鱼皮</a>
-# @from <a href="https://yupi.icu">编程导航知识星球</a>
 spring:
   application:
     name: user-center-backend
-#  profiles:
-#    active: prod
+  profiles:
+#    指定windows还是mac使用docker部署地址，不指定active则使用本机的地址
+    active: mac
+#    active: windows
+
 
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/usercenter
+#    url: jdbc:mysql://localhost:3306/usercenter
+    url: jdbc:mysql://localhost:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: Sz10231314@
   # session 失效时间
