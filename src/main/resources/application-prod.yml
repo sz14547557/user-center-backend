@@ -3,12 +3,10 @@ spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-#    此处用docker 的话如果是docker内部的mysql则可以使用localhost ，
-#    url: jdbc:mysql://localhost:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
-#    此处用docker 如果是宿主机的mysql 则需要指定ip地址
-    url: jdbc:mysql://172.17.0.2:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+#    此处用docker 的话如果是docker内部的mysql则可以使用 mysql的容器服务名/Linux的ip地址(使用命令查询容器ip地址： docker inspect 容器id )
+    url: jdbc:mysql://192.168.253.128:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
     username: root
-    password: Sz10231314@
+    password: root
   # session 失效时间
   session:
     timeout: 86400
