@@ -1,10 +1,10 @@
-# windows docker线上配置文件
+# windows docker线上配置文件 保持启动项目中的Dockerfile是否为最新版本！
 spring:
   # DataSource Config
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
 #    此处用docker 的话如果是docker内部的mysql则可以使用 Linux的ip地址进行连接
-    url: jdbc:mysql://:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://192.168.253.128:3306/usercenter?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
     username: root
     password: root
   # session 失效时间

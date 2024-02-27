@@ -1,4 +1,4 @@
-# mac docker线上配置文件
+# mac docker线上配置文件  保持启动项目中的Dockerfile是否为最新版本！
 spring:
   # DataSource Config
   datasource:

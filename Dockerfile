@@ -16,8 +16,10 @@ ARG JAR_FILE=target/user-center-backend-0.0.1-SNAPSHOT.jar
 # 往容器中添加jar包 target.jar是别名，可以任意修改
 ADD ${JAR_FILE} target.jar
 
-# 启动镜像自动运行程序
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar","/target.jar"]
+# 启动镜像自动运行程序 并指定线上docker配置文件为 windows/mac
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/urandom","-jar","/target.jar","--spring.profiles.active=windows"]
 
 #构建 docker build -t usercenter:v1 .
 #启动 docker run -p 8080:8080 -d usercenter:v1
+
+#保持启动项目中的Dockerfile是否为最新版本！
